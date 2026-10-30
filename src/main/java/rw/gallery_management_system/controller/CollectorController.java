@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import rw.gallery_management_system.model.Collector;
 import rw.gallery_management_system.service.CollectorService;
+import rw.gallery_management_system.service.CuratorService;
 
 import java.util.List;
 import java.util.Optional;
@@ -25,6 +26,9 @@ public class CollectorController {
 
 	@Autowired
 	private CollectorService collectorService;
+
+	@Autowired
+	private CuratorService curatorService;
 
 	@PostMapping("/save")
 	public ResponseEntity<String> save(@RequestBody Collector collector) {
@@ -66,5 +70,13 @@ public class CollectorController {
 	@GetMapping("/by-last-name")
 	public ResponseEntity<List<Collector>> getByLastName(@RequestParam String lastName) {
 		return new ResponseEntity<>(collectorService.getByLastName(lastName), HttpStatus.OK);
+	}
+
+	@GetMapping("/of-curator/{curatorId}")
+	public ResponseEntity<?> getOfCurator(@PathVariable UUID curatorId) {
+		if (curatorService.getById(curatorId).isEmpty()) {
+			return new ResponseEntity<>("The curator with that id does not exist", HttpStatus.NOT_FOUND);
+		}
+		return new ResponseEntity<>(collectorService.getOfCurator(curatorId), HttpStatus.OK);
 	}
 }

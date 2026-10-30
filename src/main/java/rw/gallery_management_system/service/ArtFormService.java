@@ -46,4 +46,8 @@ public class ArtFormService {
 		artFormRepository.deleteById(id);
 		return "Art form deleted successfully";
 	}
+
+	public List<ArtForm> getUnused() {
+		return artFormRepository.findUnused();
+	}
 }

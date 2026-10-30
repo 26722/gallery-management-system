@@ -61,4 +61,9 @@ public class ExhibitionHallController {
 		}
 		return new ResponseEntity<>(message, HttpStatus.OK);
 	}
+
+	@GetMapping("/free")
+	public ResponseEntity<List<ExhibitionHall>> getFree() {
+		return new ResponseEntity<>(exhibitionHallService.getFree(), HttpStatus.OK);
+	}
 }

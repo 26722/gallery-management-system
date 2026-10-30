@@ -50,4 +50,8 @@ public class CuratorService {
 		curatorRepository.deleteById(id);
 		return "Curator deleted successfully";
 	}
+
+	public List<Curator> getByArtForm(String name) {
+		return curatorRepository.findByArtFormName(name);
+	}
 }

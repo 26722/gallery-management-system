@@ -54,4 +54,8 @@ public class CollectorService {
 	public List<Collector> getByLastName(String lastName) {
 		return collectorRepository.findByLastNameIgnoreCaseOrderByFirstNameAsc(lastName);
 	}
+
+	public List<Collector> getOfCurator(UUID curatorId) {
+		return collectorRepository.findByCuratorId(curatorId);
+	}
 }

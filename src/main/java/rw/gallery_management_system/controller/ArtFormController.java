@@ -61,4 +61,9 @@ public class ArtFormController {
 		}
 		return new ResponseEntity<>(message, HttpStatus.OK);
 	}
+
+	@GetMapping("/unused")
+	public ResponseEntity<List<ArtForm>> getUnused() {
+		return new ResponseEntity<>(artFormService.getUnused(), HttpStatus.OK);
+	}
 }
