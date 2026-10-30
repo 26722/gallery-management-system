@@ -10,10 +10,13 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import rw.gallery_management_system.model.PrivateViewing;
+import rw.gallery_management_system.model.ViewingStatus;
 import rw.gallery_management_system.service.PrivateViewingService;
 
+import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
@@ -60,5 +63,15 @@ public class PrivateViewingController {
 			return new ResponseEntity<>(message, HttpStatus.NOT_FOUND);
 		}
 		return new ResponseEntity<>(message, HttpStatus.OK);
+	}
+
+	@GetMapping("/by-status")
+	public ResponseEntity<List<PrivateViewing>> getByStatus(@RequestParam ViewingStatus status) {
+		return new ResponseEntity<>(privateViewingService.getByStatus(status), HttpStatus.OK);
+	}
+
+	@GetMapping("/between")
+	public ResponseEntity<List<PrivateViewing>> getBetween(@RequestParam String start, @RequestParam String end) {
+		return new ResponseEntity<>(privateViewingService.getBetween(LocalDate.parse(start), LocalDate.parse(end)), HttpStatus.OK);
 	}
 }

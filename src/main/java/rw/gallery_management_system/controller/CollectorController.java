@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import rw.gallery_management_system.model.Collector;
 import rw.gallery_management_system.service.CollectorService;
@@ -60,5 +61,10 @@ public class CollectorController {
 			return new ResponseEntity<>(message, HttpStatus.NOT_FOUND);
 		}
 		return new ResponseEntity<>(message, HttpStatus.OK);
+	}
+
+	@GetMapping("/by-last-name")
+	public ResponseEntity<List<Collector>> getByLastName(@RequestParam String lastName) {
+		return new ResponseEntity<>(collectorService.getByLastName(lastName), HttpStatus.OK);
 	}
 }

@@ -50,4 +50,8 @@ public class CollectorService {
 		collectorRepository.deleteById(id);
 		return "Collector deleted successfully";
 	}
+
+	public List<Collector> getByLastName(String lastName) {
+		return collectorRepository.findByLastNameIgnoreCaseOrderByFirstNameAsc(lastName);
+	}
 }

@@ -3,8 +3,10 @@ package rw.gallery_management_system.service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import rw.gallery_management_system.model.PrivateViewing;
+import rw.gallery_management_system.model.ViewingStatus;
 import rw.gallery_management_system.repository.PrivateViewingRepository;
 
+import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
@@ -49,5 +51,13 @@ public class PrivateViewingService {
 		}
 		privateViewingRepository.deleteById(id);
 		return "Private viewing deleted successfully";
+	}
+
+	public List<PrivateViewing> getByStatus(ViewingStatus status) {
+		return privateViewingRepository.findByStatusOrderByViewingDateAsc(status);
+	}
+
+	public List<PrivateViewing> getBetween(LocalDate start, LocalDate end) {
+		return privateViewingRepository.findByViewingDateBetweenOrderByViewingDateAsc(start, end);
 	}
 }
