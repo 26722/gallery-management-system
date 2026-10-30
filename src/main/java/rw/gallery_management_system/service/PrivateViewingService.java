@@ -18,6 +18,13 @@ public class PrivateViewingService {
 	private PrivateViewingRepository privateViewingRepository;
 
 	public String save(PrivateViewing privateViewing) {
+		if (privateViewing.getViewingDate().isBefore(LocalDate.now())) {
+			return "Private viewing date cannot be in the past";
+		}
+		if (privateViewingRepository.existsByCuratorIdAndViewingDateAndStatusNot(privateViewing.getCurator().getId(), privateViewing.getViewingDate(), ViewingStatus.CANCELLED)) {
+			return "Curator already hosts a viewing on that date";
+		}
+		privateViewing.setStatus(ViewingStatus.REQUESTED);
 		privateViewingRepository.save(privateViewing);
 		return "Private viewing saved successfully";
 	}

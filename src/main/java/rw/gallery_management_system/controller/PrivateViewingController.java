@@ -30,7 +30,14 @@ public class PrivateViewingController {
 
 	@PostMapping("/save")
 	public ResponseEntity<String> save(@RequestBody PrivateViewing privateViewing) {
-		return new ResponseEntity<>(privateViewingService.save(privateViewing), HttpStatus.CREATED);
+		String message = privateViewingService.save(privateViewing);
+		if (message.contains("in the past")) {
+			return new ResponseEntity<>(message, HttpStatus.BAD_REQUEST);
+		}
+		if (message.contains("already hosts")) {
+			return new ResponseEntity<>(message, HttpStatus.CONFLICT);
+		}
+		return new ResponseEntity<>(message, HttpStatus.CREATED);
 	}
 
 	@GetMapping("/all")

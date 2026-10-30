@@ -13,4 +13,6 @@ public interface PrivateViewingRepository extends JpaRepository<PrivateViewing, 
 	List<PrivateViewing> findByStatusOrderByViewingDateAsc(ViewingStatus status);
 
 	List<PrivateViewing> findByViewingDateBetweenOrderByViewingDateAsc(LocalDate start, LocalDate end);
+
+	boolean existsByCuratorIdAndViewingDateAndStatusNot(UUID curatorId, LocalDate viewingDate, ViewingStatus status);
 }
