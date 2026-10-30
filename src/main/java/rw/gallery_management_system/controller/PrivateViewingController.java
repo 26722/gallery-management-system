@@ -5,6 +5,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
@@ -68,6 +69,18 @@ public class PrivateViewingController {
 		String message = privateViewingService.delete(id);
 		if (message.contains("does not exist")) {
 			return new ResponseEntity<>(message, HttpStatus.NOT_FOUND);
+		}
+		return new ResponseEntity<>(message, HttpStatus.OK);
+	}
+
+	@PatchMapping("/{id}/status")
+	public ResponseEntity<String> changeStatus(@PathVariable UUID id, @RequestParam ViewingStatus status) {
+		String message = privateViewingService.changeStatus(id, status);
+		if (message.contains("does not exist")) {
+			return new ResponseEntity<>(message, HttpStatus.NOT_FOUND);
+		}
+		if (message.startsWith("Cannot change")) {
+			return new ResponseEntity<>(message, HttpStatus.BAD_REQUEST);
 		}
 		return new ResponseEntity<>(message, HttpStatus.OK);
 	}

@@ -5,6 +5,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
@@ -66,5 +67,29 @@ public class CuratorController {
 	@GetMapping("/by-art-form")
 	public ResponseEntity<List<Curator>> getByArtForm(@RequestParam String name) {
 		return new ResponseEntity<>(curatorService.getByArtForm(name), HttpStatus.OK);
+	}
+
+	@PutMapping("/{curatorId}/art-forms/{artFormId}")
+	public ResponseEntity<String> addArtForm(@PathVariable UUID curatorId, @PathVariable UUID artFormId) {
+		String message = curatorService.addArtForm(curatorId, artFormId);
+		if (message.contains("does not exist")) {
+			return new ResponseEntity<>(message, HttpStatus.NOT_FOUND);
+		}
+		if (message.contains("already has")) {
+			return new ResponseEntity<>(message, HttpStatus.CONFLICT);
+		}
+		return new ResponseEntity<>(message, HttpStatus.OK);
+	}
+
+	@PatchMapping("/{curatorId}/exhibition-hall")
+	public ResponseEntity<String> changeExhibitionHall(@PathVariable UUID curatorId, @RequestParam int hallNumber) {
+		String message = curatorService.changeExhibitionHall(curatorId, hallNumber);
+		if (message.contains("does not exist")) {
+			return new ResponseEntity<>(message, HttpStatus.NOT_FOUND);
+		}
+		if (message.contains("is taken")) {
+			return new ResponseEntity<>(message, HttpStatus.CONFLICT);
+		}
+		return new ResponseEntity<>(message, HttpStatus.OK);
 	}
 }

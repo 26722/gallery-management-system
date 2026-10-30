@@ -44,7 +44,6 @@ public class PrivateViewingService {
 		}
 		PrivateViewing found = existing.get();
 		found.setViewingDate(privateViewing.getViewingDate());
-		found.setStatus(privateViewing.getStatus());
 		found.setInterest(privateViewing.getInterest());
 		found.setCollector(privateViewing.getCollector());
 		found.setCurator(privateViewing.getCurator());
@@ -58,6 +57,23 @@ public class PrivateViewingService {
 		}
 		privateViewingRepository.deleteById(id);
 		return "Private viewing deleted successfully";
+	}
+
+	public String changeStatus(UUID id, ViewingStatus status) {
+		Optional<PrivateViewing> existing = privateViewingRepository.findById(id);
+		if (existing.isEmpty()) {
+			return "The private viewing with that id does not exist";
+		}
+		PrivateViewing found = existing.get();
+		ViewingStatus current = found.getStatus();
+		boolean allowed = (current == ViewingStatus.REQUESTED && (status == ViewingStatus.ARRANGED || status == ViewingStatus.CANCELLED))
+				|| (current == ViewingStatus.ARRANGED && (status == ViewingStatus.HELD || status == ViewingStatus.CANCELLED));
+		if (!allowed) {
+			return "Cannot change status from " + current + " to " + status;
+		}
+		found.setStatus(status);
+		privateViewingRepository.save(found);
+		return "Private viewing status updated successfully";
 	}
 
 	public List<PrivateViewing> getByStatus(ViewingStatus status) {
