@@ -3,6 +3,7 @@ package rw.gallery_management_system.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -38,5 +39,14 @@ public class PurchaseController {
 	@GetMapping("/collector/{collectorCode}")
 	public ResponseEntity<List<Purchase>> getByCollector(@PathVariable String collectorCode) {
 		return new ResponseEntity<>(purchaseService.getByCollector(collectorCode), HttpStatus.OK);
+	}
+
+	@DeleteMapping("/delete/{id}")
+	public ResponseEntity<String> delete(@PathVariable UUID id) {
+		String message = purchaseService.delete(id);
+		if (message.contains("does not exist")) {
+			return new ResponseEntity<>(message, HttpStatus.NOT_FOUND);
+		}
+		return new ResponseEntity<>(message, HttpStatus.OK);
 	}
 }

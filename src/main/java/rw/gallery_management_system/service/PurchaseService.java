@@ -39,4 +39,12 @@ public class PurchaseService {
 	public List<Purchase> getByCollector(String collectorCode) {
 		return purchaseRepository.findByCollectorCode(collectorCode);
 	}
+
+	public String delete(UUID id) {
+		if (!purchaseRepository.existsById(id)) {
+			return "The purchase with that id does not exist";
+		}
+		purchaseRepository.deleteById(id);
+		return "Purchase deleted successfully";
+	}
 }

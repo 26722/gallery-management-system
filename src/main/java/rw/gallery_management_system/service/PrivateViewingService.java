@@ -5,6 +5,7 @@ import org.springframework.stereotype.Service;
 import rw.gallery_management_system.model.PrivateViewing;
 import rw.gallery_management_system.model.ViewingStatus;
 import rw.gallery_management_system.repository.PrivateViewingRepository;
+import rw.gallery_management_system.repository.PurchaseRepository;
 
 import java.time.LocalDate;
 import java.util.List;
@@ -16,6 +17,9 @@ public class PrivateViewingService {
 
 	@Autowired
 	private PrivateViewingRepository privateViewingRepository;
+
+	@Autowired
+	private PurchaseRepository purchaseRepository;
 
 	public String save(PrivateViewing privateViewing) {
 		if (privateViewing.getViewingDate().isBefore(LocalDate.now())) {
@@ -52,8 +56,12 @@ public class PrivateViewingService {
 	}
 
 	public String delete(UUID id) {
-		if (!privateViewingRepository.existsById(id)) {
+		Optional<PrivateViewing> existing = privateViewingRepository.findById(id);
+		if (existing.isEmpty()) {
 			return "The private viewing with that id does not exist";
+		}
+		if (purchaseRepository.existsByPrivateViewing(existing.get())) {
+			return "That private viewing has purchases, delete them first";
 		}
 		privateViewingRepository.deleteById(id);
 		return "Private viewing deleted successfully";

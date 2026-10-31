@@ -70,6 +70,9 @@ public class PrivateViewingController {
 		if (message.contains("does not exist")) {
 			return new ResponseEntity<>(message, HttpStatus.NOT_FOUND);
 		}
+		if (message.contains("has purchases")) {
+			return new ResponseEntity<>(message, HttpStatus.CONFLICT);
+		}
 		return new ResponseEntity<>(message, HttpStatus.OK);
 	}
 
