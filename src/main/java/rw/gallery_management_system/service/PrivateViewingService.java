@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import rw.gallery_management_system.model.PrivateViewing;
 import rw.gallery_management_system.model.ViewingStatus;
 import rw.gallery_management_system.repository.PrivateViewingRepository;
@@ -94,6 +95,7 @@ public class PrivateViewingService {
 		return privateViewingRepository.countPerStatus();
 	}
 
+	@Transactional
 	public String cancelDay(UUID curatorId, LocalDate date) {
 		int count = privateViewingRepository.cancelDay(curatorId, date, ViewingStatus.CANCELLED, ViewingStatus.HELD);
 		return count + " private viewings cancelled";
