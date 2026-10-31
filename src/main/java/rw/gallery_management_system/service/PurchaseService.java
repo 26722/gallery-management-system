@@ -9,6 +9,7 @@ import rw.gallery_management_system.repository.PrivateViewingRepository;
 import rw.gallery_management_system.repository.PurchaseRepository;
 
 import java.time.LocalDate;
+import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 
@@ -33,5 +34,9 @@ public class PurchaseService {
 		purchase.setPrivateViewing(privateViewing.get());
 		purchaseRepository.save(purchase);
 		return "Purchase saved successfully";
+	}
+
+	public List<Purchase> getByCollector(String collectorCode) {
+		return purchaseRepository.findByCollectorCode(collectorCode);
 	}
 }
