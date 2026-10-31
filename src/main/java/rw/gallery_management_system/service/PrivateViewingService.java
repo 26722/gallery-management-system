@@ -84,6 +84,15 @@ public class PrivateViewingService {
 		return "Private viewing status updated successfully";
 	}
 
+	public List<Object[]> countByStatus() {
+		return privateViewingRepository.countByStatus();
+	}
+
+	public String cancelDay(UUID curatorId, LocalDate date) {
+		int count = privateViewingRepository.cancelDay(curatorId, date, ViewingStatus.CANCELLED, ViewingStatus.HELD);
+		return count + " private viewings cancelled";
+	}
+
 	public List<PrivateViewing> getByStatus(ViewingStatus status) {
 		return privateViewingRepository.findByStatusOrderByViewingDateAsc(status);
 	}

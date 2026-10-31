@@ -88,6 +88,16 @@ public class PrivateViewingController {
 		return new ResponseEntity<>(message, HttpStatus.OK);
 	}
 
+	@GetMapping("/stats/by-status")
+	public ResponseEntity<List<Object[]>> countByStatus() {
+		return new ResponseEntity<>(privateViewingService.countByStatus(), HttpStatus.OK);
+	}
+
+	@PatchMapping("/cancel-day")
+	public ResponseEntity<String> cancelDay(@RequestParam UUID curatorId, @RequestParam String date) {
+		return new ResponseEntity<>(privateViewingService.cancelDay(curatorId, LocalDate.parse(date)), HttpStatus.OK);
+	}
+
 	@GetMapping("/by-status")
 	public ResponseEntity<List<PrivateViewing>> getByStatus(@RequestParam ViewingStatus status) {
 		return new ResponseEntity<>(privateViewingService.getByStatus(status), HttpStatus.OK);
