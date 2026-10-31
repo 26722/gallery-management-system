@@ -21,7 +21,11 @@ public interface PrivateViewingRepository extends JpaRepository<PrivateViewing, 
 	boolean existsByCuratorIdAndViewingDateAndStatusNot(UUID curatorId, LocalDate viewingDate, ViewingStatus status);
 
 	@Query("SELECT v.status, COUNT(v) FROM PrivateViewing v GROUP BY v.status")
-	List<Object[]> countByStatus();
+	List<Object[]> countPerStatus();
+
+	long countByStatus(ViewingStatus status);
+
+	long countByViewingDate(LocalDate viewingDate);
 
 	@Modifying
 	@Transactional

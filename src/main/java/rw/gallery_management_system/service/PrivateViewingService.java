@@ -1,6 +1,8 @@
 package rw.gallery_management_system.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import rw.gallery_management_system.model.PrivateViewing;
 import rw.gallery_management_system.model.ViewingStatus;
@@ -84,8 +86,12 @@ public class PrivateViewingService {
 		return "Private viewing status updated successfully";
 	}
 
+	public Page<PrivateViewing> getPage(Pageable pageable) {
+		return privateViewingRepository.findAll(pageable);
+	}
+
 	public List<Object[]> countByStatus() {
-		return privateViewingRepository.countByStatus();
+		return privateViewingRepository.countPerStatus();
 	}
 
 	public String cancelDay(UUID curatorId, LocalDate date) {

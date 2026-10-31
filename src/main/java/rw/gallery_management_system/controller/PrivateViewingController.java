@@ -1,6 +1,10 @@
 package rw.gallery_management_system.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -86,6 +90,13 @@ public class PrivateViewingController {
 			return new ResponseEntity<>(message, HttpStatus.BAD_REQUEST);
 		}
 		return new ResponseEntity<>(message, HttpStatus.OK);
+	}
+
+	@GetMapping("/page")
+	public ResponseEntity<Page<PrivateViewing>> getPage(@RequestParam int page, @RequestParam int size, @RequestParam String sort) {
+		String[] parts = sort.split(",");
+		Pageable pageable = PageRequest.of(page, size, Sort.by(Sort.Direction.fromString(parts[1]), parts[0]));
+		return new ResponseEntity<>(privateViewingService.getPage(pageable), HttpStatus.OK);
 	}
 
 	@GetMapping("/stats/by-status")
