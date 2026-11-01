@@ -1,0 +1,1905 @@
+{
+  "info": {
+    "_postman_id": "544e06e5-10da-4522-b512-9595b659a62b",
+    "name": "gallery-management-system-midterm",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "58384722",
+    "_collection_link": "https://go.postman.co/collection/58384722-544e06e5-10da-4522-b512-9595b659a62b?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Part A - Domain model and CRUD",
+      "item": [
+        {
+          "name": "A2 - Save art form",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"name\": \"Ceramics\"}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/art-forms/save",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "art-forms",
+                "save"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "A2 - Get all art forms",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/art-forms/all",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "art-forms",
+                "all"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "A2 - Get art form by id",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/art-forms/246e5049-69e2-42b4-b823-faa41134e44b",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "art-forms",
+                "246e5049-69e2-42b4-b823-faa41134e44b"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "A2 - Get art form by id (not found)",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/art-forms/00000000-0000-0000-0000-000000000000",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "art-forms",
+                "00000000-0000-0000-0000-000000000000"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "A2 - Update art form",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"name\": \"Painting\"}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/art-forms/update/246e5049-69e2-42b4-b823-faa41134e44b",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "art-forms",
+                "update",
+                "246e5049-69e2-42b4-b823-faa41134e44b"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "A2 - Delete art form",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/art-forms/delete/f8f639d8-4f28-4cce-b313-b812f5661c32",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "art-forms",
+                "delete",
+                "f8f639d8-4f28-4cce-b313-b812f5661c32"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "A2 - Save exhibition hall",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"hallNumber\": 5, \"name\": \"Garden Hall\"}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/exhibition-halls/save",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "exhibition-halls",
+                "save"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "A2 - Get all exhibition halls",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/exhibition-halls/all",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "exhibition-halls",
+                "all"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "A2 - Get exhibition hall by id",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/exhibition-halls/c2b58e50-7637-4536-b613-1c600755136c",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "exhibition-halls",
+                "c2b58e50-7637-4536-b613-1c600755136c"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "A2 - Get exhibition hall by id (not found)",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/exhibition-halls/00000000-0000-0000-0000-000000000000",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "exhibition-halls",
+                "00000000-0000-0000-0000-000000000000"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "A2 - Update exhibition hall",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"hallNumber\": 1, \"name\": \"North Hall\"}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/exhibition-halls/update/c2b58e50-7637-4536-b613-1c600755136c",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "exhibition-halls",
+                "update",
+                "c2b58e50-7637-4536-b613-1c600755136c"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "A2 - Delete exhibition hall",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/exhibition-halls/delete/5dbd4d5a-b6ca-40d5-83cb-41ea5d9885d7",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "exhibition-halls",
+                "delete",
+                "5dbd4d5a-b6ca-40d5-83cb-41ea5d9885d7"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "A2 - Save curator",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"firstName\": \"Sandrine\", \"lastName\": \"Mukamana\", \"email\": \"sandrine@gallery.rw\", \"artForms\": [{\"id\": \"a068d123-aa4b-401b-9939-598ad6fe38d2\"}]}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/curators/save",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "curators",
+                "save"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "A2 - Get all curators",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/curators/all",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "curators",
+                "all"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "A2 - Get curator by id",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/curators/86fdfec2-97a4-4082-a2a7-a3c5b5036a5e",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "curators",
+                "86fdfec2-97a4-4082-a2a7-a3c5b5036a5e"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "A2 - Get curator by id (not found)",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/curators/00000000-0000-0000-0000-000000000000",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "curators",
+                "00000000-0000-0000-0000-000000000000"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "A2 - Update curator",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"firstName\": \"Aline\", \"lastName\": \"Uwase\", \"email\": \"aline@gallery.rw\", \"exhibitionHall\": {\"id\": \"ca973a48-6c96-4763-ac81-e64ad5c9c886\"}, \"artForms\": [{\"id\": \"f142e41b-2090-4a59-be15-e5e6d5b7a725\"}]}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/curators/update/1e326159-6e8d-40f5-9c59-ae0cf6ed441b",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "curators",
+                "update",
+                "1e326159-6e8d-40f5-9c59-ae0cf6ed441b"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "A2 - Delete curator",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/curators/delete/d0c81d80-480e-4abb-b3cf-83519f5959ef",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "curators",
+                "delete",
+                "d0c81d80-480e-4abb-b3cf-83519f5959ef"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "A2 - Save collector",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"firstName\": \"Jean-Paul\", \"lastName\": \"Mugabo\", \"collectorCode\": \"CL-0315\", \"email\": \"jeanpaul@mail.rw\", \"phone\": \"0788000006\"}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/collectors/save",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "collectors",
+                "save"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "A2 - Get all collectors",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/collectors/all",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "collectors",
+                "all"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "A2 - Get collector by id",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/collectors/5966f7c7-b2d4-47e1-a90b-f0fe8a1b930e",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "collectors",
+                "5966f7c7-b2d4-47e1-a90b-f0fe8a1b930e"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "A2 - Get collector by id (not found)",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/collectors/00000000-0000-0000-0000-000000000000",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "collectors",
+                "00000000-0000-0000-0000-000000000000"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "A2 - Update collector",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"firstName\": \"Grace\", \"lastName\": \"Umukire\", \"collectorCode\": \"CL-0310\", \"email\": \"grace@mail.rw\", \"phone\": \"0788000001\"}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/collectors/update/5966f7c7-b2d4-47e1-a90b-f0fe8a1b930e",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "collectors",
+                "update",
+                "5966f7c7-b2d4-47e1-a90b-f0fe8a1b930e"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "A2 - Delete collector",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/collectors/delete/e63959eb-bace-4a67-9baa-9afd4c9cf347",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "collectors",
+                "delete",
+                "e63959eb-bace-4a67-9baa-9afd4c9cf347"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "A2 - Save private viewing",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"viewingDate\": \"2026-12-12\", \"interest\": \"Bronze sculpture\", \"collector\": {\"id\": \"e8c6b2a3-bef7-4a1f-8ded-63b7685dc6ce\"}, \"curator\": {\"id\": \"c1e3a335-9d8b-48d1-8039-c6bebdd69932\"}}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/private-viewings/save",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "private-viewings",
+                "save"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "A2 - Get all private viewings",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/private-viewings/all",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "private-viewings",
+                "all"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "A2 - Get private viewing by id",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/private-viewings/26d70159-6241-4907-9bc8-21f3d02accb4",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "private-viewings",
+                "26d70159-6241-4907-9bc8-21f3d02accb4"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "A2 - Get private viewing by id (not found)",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/private-viewings/00000000-0000-0000-0000-000000000000",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "private-viewings",
+                "00000000-0000-0000-0000-000000000000"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "A2 - Update private viewing",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"viewingDate\": \"2026-10-12\", \"interest\": \"Black and white photography\", \"collector\": {\"id\": \"5966f7c7-b2d4-47e1-a90b-f0fe8a1b930e\"}, \"curator\": {\"id\": \"1e326159-6e8d-40f5-9c59-ae0cf6ed441b\"}}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/private-viewings/update/51f996a8-1459-4a73-8294-6bb46bdbcdae",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "private-viewings",
+                "update",
+                "51f996a8-1459-4a73-8294-6bb46bdbcdae"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "A2 - Delete private viewing",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/private-viewings/delete/b36d6133-9a9a-4498-b79a-301ba90fddef",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "private-viewings",
+                "delete",
+                "b36d6133-9a9a-4498-b79a-301ba90fddef"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Part B - Derived queries",
+      "item": [
+        {
+          "name": "B1 - Collectors by last name",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/collectors/by-last-name?lastName=umukire",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "collectors",
+                "by-last-name"
+              ],
+              "query": [
+                {
+                  "key": "lastName",
+                  "value": "umukire"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "B1 - Collectors by last name (no match)",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/collectors/by-last-name?lastName=nobody",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "collectors",
+                "by-last-name"
+              ],
+              "query": [
+                {
+                  "key": "lastName",
+                  "value": "nobody"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "B2 - Private viewings by status",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/private-viewings/by-status?status=REQUESTED",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "private-viewings",
+                "by-status"
+              ],
+              "query": [
+                {
+                  "key": "status",
+                  "value": "REQUESTED"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "B3 - Private viewings between dates",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/private-viewings/between?start=2026-10-01&end=2026-10-31",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "private-viewings",
+                "between"
+              ],
+              "query": [
+                {
+                  "key": "start",
+                  "value": "2026-10-01"
+                },
+                {
+                  "key": "end",
+                  "value": "2026-10-31"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Part C - JPQL with joins",
+      "item": [
+        {
+          "name": "C1 - Curators by art form",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/curators/by-art-form?name=paint",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "curators",
+                "by-art-form"
+              ],
+              "query": [
+                {
+                  "key": "name",
+                  "value": "paint"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "C2 - Free exhibition halls",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/exhibition-halls/free",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "exhibition-halls",
+                "free"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "C3 - Art forms nobody holds",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/art-forms/unused",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "art-forms",
+                "unused"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "C4 - Collectors of a curator",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/collectors/of-curator/86fdfec2-97a4-4082-a2a7-a3c5b5036a5e",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "collectors",
+                "of-curator",
+                "86fdfec2-97a4-4082-a2a7-a3c5b5036a5e"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "C4 - Collectors of a curator (not found)",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/collectors/of-curator/00000000-0000-0000-0000-000000000000",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "collectors",
+                "of-curator",
+                "00000000-0000-0000-0000-000000000000"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Part D - Business rules",
+      "item": [
+        {
+          "name": "D1 - Save private viewing (past date)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"viewingDate\": \"2026-10-01\", \"interest\": \"Oil paintings\", \"collector\": {\"id\": \"5966f7c7-b2d4-47e1-a90b-f0fe8a1b930e\"}, \"curator\": {\"id\": \"86fdfec2-97a4-4082-a2a7-a3c5b5036a5e\"}}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/private-viewings/save",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "private-viewings",
+                "save"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "D1 - Save private viewing (curator busy)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"viewingDate\": \"2026-11-27\", \"interest\": \"Oil paintings\", \"collector\": {\"id\": \"5966f7c7-b2d4-47e1-a90b-f0fe8a1b930e\"}, \"curator\": {\"id\": \"86fdfec2-97a4-4082-a2a7-a3c5b5036a5e\"}}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/private-viewings/save",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "private-viewings",
+                "save"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "D1 - Save private viewing (starts as REQUESTED)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"viewingDate\": \"2026-11-20\", \"status\": \"HELD\", \"interest\": \"Portrait photography\", \"collector\": {\"id\": \"5966f7c7-b2d4-47e1-a90b-f0fe8a1b930e\"}, \"curator\": {\"id\": \"1e326159-6e8d-40f5-9c59-ae0cf6ed441b\"}}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/private-viewings/save",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "private-viewings",
+                "save"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "D2 - Change status to ARRANGED",
+          "request": {
+            "method": "PATCH",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/private-viewings/5f3deacf-0400-4ce7-9df8-0a122eb48414/status?status=ARRANGED",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "private-viewings",
+                "5f3deacf-0400-4ce7-9df8-0a122eb48414",
+                "status"
+              ],
+              "query": [
+                {
+                  "key": "status",
+                  "value": "ARRANGED"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "D2 - Change status to REQUESTED (not allowed)",
+          "request": {
+            "method": "PATCH",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/private-viewings/5f3deacf-0400-4ce7-9df8-0a122eb48414/status?status=REQUESTED",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "private-viewings",
+                "5f3deacf-0400-4ce7-9df8-0a122eb48414",
+                "status"
+              ],
+              "query": [
+                {
+                  "key": "status",
+                  "value": "REQUESTED"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "D2 - Change status to HELD",
+          "request": {
+            "method": "PATCH",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/private-viewings/5f3deacf-0400-4ce7-9df8-0a122eb48414/status?status=HELD",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "private-viewings",
+                "5f3deacf-0400-4ce7-9df8-0a122eb48414",
+                "status"
+              ],
+              "query": [
+                {
+                  "key": "status",
+                  "value": "HELD"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "D2 - Change status to CANCELLED (not allowed)",
+          "request": {
+            "method": "PATCH",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/private-viewings/5f3deacf-0400-4ce7-9df8-0a122eb48414/status?status=CANCELLED",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "private-viewings",
+                "5f3deacf-0400-4ce7-9df8-0a122eb48414",
+                "status"
+              ],
+              "query": [
+                {
+                  "key": "status",
+                  "value": "CANCELLED"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "D2 - Change status (not found)",
+          "request": {
+            "method": "PATCH",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/private-viewings/00000000-0000-0000-0000-000000000000/status?status=ARRANGED",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "private-viewings",
+                "00000000-0000-0000-0000-000000000000",
+                "status"
+              ],
+              "query": [
+                {
+                  "key": "status",
+                  "value": "ARRANGED"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "D3 - Add art form to curator",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/curators/1e326159-6e8d-40f5-9c59-ae0cf6ed441b/art-forms/a068d123-aa4b-401b-9939-598ad6fe38d2",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "curators",
+                "1e326159-6e8d-40f5-9c59-ae0cf6ed441b",
+                "art-forms",
+                "a068d123-aa4b-401b-9939-598ad6fe38d2"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "D3 - Add art form to curator (already has it)",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/curators/1e326159-6e8d-40f5-9c59-ae0cf6ed441b/art-forms/a068d123-aa4b-401b-9939-598ad6fe38d2",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "curators",
+                "1e326159-6e8d-40f5-9c59-ae0cf6ed441b",
+                "art-forms",
+                "a068d123-aa4b-401b-9939-598ad6fe38d2"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "D3 - Add art form to curator (curator not found)",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/curators/00000000-0000-0000-0000-000000000000/art-forms/a068d123-aa4b-401b-9939-598ad6fe38d2",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "curators",
+                "00000000-0000-0000-0000-000000000000",
+                "art-forms",
+                "a068d123-aa4b-401b-9939-598ad6fe38d2"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "D3 - Add art form to curator (art form not found)",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/curators/1e326159-6e8d-40f5-9c59-ae0cf6ed441b/art-forms/00000000-0000-0000-0000-000000000000",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "curators",
+                "1e326159-6e8d-40f5-9c59-ae0cf6ed441b",
+                "art-forms",
+                "00000000-0000-0000-0000-000000000000"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "D4 - Change exhibition hall (taken)",
+          "request": {
+            "method": "PATCH",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/curators/c1e3a335-9d8b-48d1-8039-c6bebdd69932/exhibition-hall?hallNumber=1",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "curators",
+                "c1e3a335-9d8b-48d1-8039-c6bebdd69932",
+                "exhibition-hall"
+              ],
+              "query": [
+                {
+                  "key": "hallNumber",
+                  "value": "1"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "D4 - Change exhibition hall (hall not found)",
+          "request": {
+            "method": "PATCH",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/curators/c1e3a335-9d8b-48d1-8039-c6bebdd69932/exhibition-hall?hallNumber=9",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "curators",
+                "c1e3a335-9d8b-48d1-8039-c6bebdd69932",
+                "exhibition-hall"
+              ],
+              "query": [
+                {
+                  "key": "hallNumber",
+                  "value": "9"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "D4 - Change exhibition hall (curator not found)",
+          "request": {
+            "method": "PATCH",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/curators/00000000-0000-0000-0000-000000000000/exhibition-hall?hallNumber=4",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "curators",
+                "00000000-0000-0000-0000-000000000000",
+                "exhibition-hall"
+              ],
+              "query": [
+                {
+                  "key": "hallNumber",
+                  "value": "4"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "D4 - Change exhibition hall",
+          "request": {
+            "method": "PATCH",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/curators/c1e3a335-9d8b-48d1-8039-c6bebdd69932/exhibition-hall?hallNumber=4",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "curators",
+                "c1e3a335-9d8b-48d1-8039-c6bebdd69932",
+                "exhibition-hall"
+              ],
+              "query": [
+                {
+                  "key": "hallNumber",
+                  "value": "4"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "D4 - Change exhibition hall back",
+          "request": {
+            "method": "PATCH",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/curators/c1e3a335-9d8b-48d1-8039-c6bebdd69932/exhibition-hall?hallNumber=3",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "curators",
+                "c1e3a335-9d8b-48d1-8039-c6bebdd69932",
+                "exhibition-hall"
+              ],
+              "query": [
+                {
+                  "key": "hallNumber",
+                  "value": "3"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Part E - Purchase",
+      "item": [
+        {
+          "name": "E1 - Save purchase",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"artworkTitle\": \"Sunset over Kivu\", \"remarks\": \"Framed, to be shipped\", \"priceUsd\": 1200}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/purchases/save?privateViewingId=26d70159-6241-4907-9bc8-21f3d02accb4",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "purchases",
+                "save"
+              ],
+              "query": [
+                {
+                  "key": "privateViewingId",
+                  "value": "26d70159-6241-4907-9bc8-21f3d02accb4"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "E1 - Save purchase (not HELD)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"artworkTitle\": \"Sunset over Kivu\", \"remarks\": \"Framed, to be shipped\", \"priceUsd\": 1200}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/purchases/save?privateViewingId=5a6e2ae9-db2f-4867-b50a-209b0c0658e2",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "purchases",
+                "save"
+              ],
+              "query": [
+                {
+                  "key": "privateViewingId",
+                  "value": "5a6e2ae9-db2f-4867-b50a-209b0c0658e2"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "E1 - Save purchase (not found)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"artworkTitle\": \"Sunset over Kivu\", \"remarks\": \"Framed, to be shipped\", \"priceUsd\": 1200}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/purchases/save?privateViewingId=00000000-0000-0000-0000-000000000000",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "purchases",
+                "save"
+              ],
+              "query": [
+                {
+                  "key": "privateViewingId",
+                  "value": "00000000-0000-0000-0000-000000000000"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "E2 - Purchase history of a collector",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/purchases/collector/CL-0310",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "purchases",
+                "collector",
+                "CL-0310"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "E2 - Purchase history of a collector (none)",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/purchases/collector/CL-0314",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "purchases",
+                "collector",
+                "CL-0314"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "E3 - Delete purchase",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/purchases/delete/b5685a7b-465c-4ae0-8cdf-cf97c645c869",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "purchases",
+                "delete",
+                "b5685a7b-465c-4ae0-8cdf-cf97c645c869"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "E3 - Delete purchase (not found)",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/purchases/delete/00000000-0000-0000-0000-000000000000",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "purchases",
+                "delete",
+                "00000000-0000-0000-0000-000000000000"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "E3 - Delete private viewing with purchases",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/private-viewings/delete/26d70159-6241-4907-9bc8-21f3d02accb4",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "private-viewings",
+                "delete",
+                "26d70159-6241-4907-9bc8-21f3d02accb4"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Part F - Reports and bulk updates",
+      "item": [
+        {
+          "name": "F1 - Private viewings per status",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/private-viewings/stats/by-status",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "private-viewings",
+                "stats",
+                "by-status"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "F2 - Cancel all viewings of a curator on a day",
+          "request": {
+            "method": "PATCH",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/private-viewings/cancel-day?curatorId=86fdfec2-97a4-4082-a2a7-a3c5b5036a5e&date=2026-10-20",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "private-viewings",
+                "cancel-day"
+              ],
+              "query": [
+                {
+                  "key": "curatorId",
+                  "value": "86fdfec2-97a4-4082-a2a7-a3c5b5036a5e"
+                },
+                {
+                  "key": "date",
+                  "value": "2026-10-20"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Bonus",
+      "item": [
+        {
+          "name": "Bonus 1 - Dashboard summary",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/dashboard/summary",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "dashboard",
+                "summary"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Bonus 2 - Private viewings page 0",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/private-viewings/page?page=0&size=5&sort=viewingDate,desc",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "private-viewings",
+                "page"
+              ],
+              "query": [
+                {
+                  "key": "page",
+                  "value": "0"
+                },
+                {
+                  "key": "size",
+                  "value": "5"
+                },
+                {
+                  "key": "sort",
+                  "value": "viewingDate,desc"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Bonus 2 - Private viewings page 1",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/private-viewings/page?page=1&size=5&sort=viewingDate,desc",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "private-viewings",
+                "page"
+              ],
+              "query": [
+                {
+                  "key": "page",
+                  "value": "1"
+                },
+                {
+                  "key": "size",
+                  "value": "5"
+                },
+                {
+                  "key": "sort",
+                  "value": "viewingDate,desc"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ]
+}
